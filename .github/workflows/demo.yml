@@ -31,12 +31,18 @@ jobs:
           name: my-artifact
           path: |
             dist
-            package.json
+           # package.json
           
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+      - name: List Output
+        run: ls -lhtr      
       - name: Deploy
         run: echo "Deploying..."
