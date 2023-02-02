@@ -46,8 +46,8 @@ jobs:
         with:
           name: my-artifact
       - name: List Output
-        run: ls -lhtr
-      - name: Output
-        run: ${{needs.build.outputs.script-test}}        
+        run: ls 
+      - name: Output Filename
+        run: "${{needs.build.outputs.script-test}}"
       - name: Deploy
         run: echo "Deploying..."
