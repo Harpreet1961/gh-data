@@ -48,6 +48,6 @@ jobs:
       - name: List Output
         run: ls 
       - name: Output Filename
-        run: "${{needs.build.outputs.script-test}}"
+        run: echo "${{needs.build.outputs.script-test}}"
       - name: Deploy
         run: echo "Deploying..."
